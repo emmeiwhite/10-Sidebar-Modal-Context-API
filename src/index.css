@@ -148,8 +148,9 @@ Home
 }
 .fa-bars {
   color: rgb(56, 172, 226);
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 .modal-btn {
   border: none;
@@ -173,12 +174,25 @@ Home
   left: -300px;
   top: 0;
   transition: all 0.7s ease-in-out;
+  padding: 1rem;
 }
 .sidebar.show {
   left: 0;
 }
 .sidebar.hide {
   left: -400px;
+}
+
+.sidebar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-close-icon {
+  font-size: 2rem;
+  color: greenyellow;
+  cursor: pointer;
 }
 
 /* --- Modal --- */
@@ -209,8 +223,11 @@ Home
   display: flex;
 }
 
-.modal-content button {
+.modal-content .modal-close-icon {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  font-size: 2rem;
+  color: greenyellow;
+  cursor: pointer;
 }

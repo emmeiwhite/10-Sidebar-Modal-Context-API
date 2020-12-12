@@ -17,7 +17,7 @@ const Home = () => {
   }, [modalBtnClick]);
   return (
     <section className="home-container">
-      <FaBars className="fa-bars" onClick={handleIconClick} />
+      <FaBars className="fa-bars" onClick={() => handleIconClick("open")} />
       <Sidebar isIconClicked={iconClick} />
       <Modal isModalBtnClicked={modalBtnClick} />
       <button

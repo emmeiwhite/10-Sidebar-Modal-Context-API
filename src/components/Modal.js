@@ -13,9 +13,11 @@ const Modal = ({ isModalBtnClicked }) => {
       >
         <div className="modal-content">
           <p>Here goes the modal content</p>
-          <button onClick={() => handleModalBtnClick("close")}>
-            <FaTimes />
-          </button>
+
+          <FaTimes
+            className="modal-close-icon"
+            onClick={() => handleModalBtnClick("close")}
+          />
         </div>
       </div>
     </main>

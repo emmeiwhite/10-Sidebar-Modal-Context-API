@@ -24,9 +24,16 @@ export default function ContextComponent({ children }) {
     }
   };
 
-  const handleIconClick = () => {
+  const handleIconClick = (iconState) => {
     console.log("Icon clicked");
-    setIconClick(true);
+    switch (iconState) {
+      case "open":
+        setIconClick(true);
+        break;
+      case "close":
+        setIconClick(false);
+        break;
+    }
   };
 
   return (

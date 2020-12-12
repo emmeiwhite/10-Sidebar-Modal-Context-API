@@ -9,36 +9,41 @@ export const useCustomContext = () => {
 };
 
 export default function ContextComponent({ children }) {
-  const [iconClick, setIconClick] = useState(false);
-  const [modalBtnClick, setModalBtnClick] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isModalOpen, setisModalOpen] = useState(false);
 
-  const handleModalBtnClick = (modalState) => {
+  const handleIsModalOpen = (modalState) => {
     console.log("Modal Button Clicked !!!");
     switch (modalState) {
       case "open":
-        setModalBtnClick(true);
+        setisModalOpen(true);
         break;
       case "close":
-        setModalBtnClick(false);
+        setisModalOpen(false);
         break;
     }
   };
 
-  const handleIconClick = (iconState) => {
+  const handleIsSidebarOpen = (iconState) => {
     console.log("Icon clicked");
     switch (iconState) {
       case "open":
-        setIconClick(true);
+        setIsSidebarOpen(true);
         break;
       case "close":
-        setIconClick(false);
+        setIsSidebarOpen(false);
         break;
     }
   };
 
   return (
     <SidebarModalContext.Provider
-      value={{ modalBtnClick, handleModalBtnClick, iconClick, handleIconClick }}
+      value={{
+        isModalOpen,
+        handleIsModalOpen,
+        isSidebarOpen,
+        handleIsSidebarOpen,
+      }}
     >
       {children}
     </SidebarModalContext.Provider>

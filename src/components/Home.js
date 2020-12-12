@@ -6,24 +6,18 @@ import { useCustomContext } from "./../context";
 
 const Home = () => {
   const {
-    iconClick,
-    handleIconClick,
-    modalBtnClick,
-    handleModalBtnClick,
+    isSidebarOpen,
+    handleIsSidebarOpen,
+    isModalOpen,
+    handleIsModalOpen,
   } = useCustomContext();
 
-  useEffect(() => {
-    console.log(modalBtnClick);
-  }, [modalBtnClick]);
   return (
     <section className="home-container">
-      <FaBars className="fa-bars" onClick={() => handleIconClick("open")} />
-      <Sidebar isIconClicked={iconClick} />
-      <Modal isModalBtnClicked={modalBtnClick} />
-      <button
-        className={`modal-btn`}
-        onClick={() => handleModalBtnClick("open")}
-      >
+      <FaBars className="fa-bars" onClick={() => handleIsSidebarOpen("open")} />
+      <Sidebar isIconClicked={isSidebarOpen} />
+      <Modal isisModalOpened={isModalOpen} />
+      <button className={`modal-btn`} onClick={() => handleIsModalOpen("open")}>
         Show Modal
       </button>
     </section>

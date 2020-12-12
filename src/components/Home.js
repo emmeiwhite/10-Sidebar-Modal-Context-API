@@ -5,19 +5,22 @@ import Sidebar from "./Sidebar";
 import { SidebarModalContext } from "./../context";
 
 const Home = () => {
-  const { handleBtnClick, btnClick, handleIconClick, iconClick } = useContext(
-    SidebarModalContext
-  );
+  const {
+    iconClick,
+    handleIconClick,
+    modalBtnClick,
+    handleModalBtnClick,
+  } = useContext(SidebarModalContext);
 
   useEffect(() => {
-    console.log(btnClick);
-  }, [btnClick]);
+    console.log(modalBtnClick);
+  }, [modalBtnClick]);
   return (
     <section className="home-container">
       <FaBars className="fa-bars" onClick={handleIconClick} />
       <Sidebar isIconClicked={iconClick} />
-      {/*  <Modal />*/}
-      <button className={`modal-btn`} onClick={handleBtnClick}>
+      <Modal isModalBtnClicked={modalBtnClick} />
+      <button className={`modal-btn`} onClick={handleModalBtnClick}>
         Show Modal
       </button>
     </section>

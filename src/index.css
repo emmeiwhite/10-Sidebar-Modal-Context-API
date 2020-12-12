@@ -180,3 +180,27 @@ Home
 .sidebar.hide {
   left: -400px;
 }
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(58, 34, 6, 0.5);
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+.modal-content {
+  height: 300px;
+  width: 300px;
+  background: #fff;
+}
+.modal-overlay.modal-open {
+  transition: all 0.5s ease-in-out;
+  display: flex;
+}

@@ -144,7 +144,7 @@ Home
   max-width: 95vw;
   min-height: 100vh;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
 }
 .fa-bars {
   color: rgb(56, 172, 226);
@@ -170,7 +170,13 @@ Home
   width: 300px;
   background: #fff;
   position: absolute;
-  left: -400px;
+  left: -300px;
   top: 0;
-  transition: width 0.4s ease-in;
+  transition: all 0.7s ease-in-out;
+}
+.sidebar.show {
+  left: 0;
+}
+.sidebar.hide {
+  left: -400px;
 }

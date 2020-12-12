@@ -10,12 +10,21 @@ export const SidebarModalContext = createContext();
 
 export default function ContextComponent({ children }) {
   const [btnClick, setBtnClick] = useState(false);
+  const [iconClick, setIconClick] = useState(false);
 
   const handleBtnClick = () => {
     setBtnClick(true);
+    console.log("Button Clicked !!!");
+  };
+
+  const handleIconClick = () => {
+    console.log("Icon clicked");
+    setIconClick(true);
   };
   return (
-    <SidebarModalContext.Provider value={{ btnClick, handleBtnClick }}>
+    <SidebarModalContext.Provider
+      value={{ btnClick, handleBtnClick, iconClick, handleIconClick }}
+    >
       {children}
     </SidebarModalContext.Provider>
   );

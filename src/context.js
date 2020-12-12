@@ -8,7 +8,7 @@ import React, { useState, createContext } from "react";
 export const SidebarModalContext = createContext();
 /* --- We have access to Provider now --- */
 
-export default function context({ children }) {
+export default function ContextComponent({ children }) {
   const [btnClick, setBtnClick] = useState(false);
 
   const handleBtnClick = () => {

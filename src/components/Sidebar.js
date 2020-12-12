@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import logo from "./../logo.svg";
 import { FaTimes } from "react-icons/fa";
 import { social, links } from "./../data";
-import { SidebarModalContext } from "./../context";
+import { useCustomContext } from "./../context";
 
 const Sidebar = ({ isIconClicked }) => {
-  const { handleIconClick } = useContext(SidebarModalContext);
+  const { handleIconClick } = useCustomContext();
   return (
     <aside className={`sidebar ${isIconClicked ? "show" : "hide"}`}>
       <header className="sidebar-heading">

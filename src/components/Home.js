@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import Modal from "./Modal";
 import Sidebar from "./Sidebar";
-import { SidebarModalContext } from "./../context";
+import { useCustomContext } from "./../context";
 
 const Home = () => {
   const {
@@ -10,7 +10,7 @@ const Home = () => {
     handleIconClick,
     modalBtnClick,
     handleModalBtnClick,
-  } = useContext(SidebarModalContext);
+  } = useCustomContext();
 
   useEffect(() => {
     console.log(modalBtnClick);

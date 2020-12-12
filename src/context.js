@@ -1,12 +1,12 @@
-import React, { useState, createContext } from "react";
-
-/* --- 
-        This component has the gloabl data | our context.
-        We'll create our context using createContext()
-    ---*/
+import React, { useState, createContext, useContext } from "react";
 
 export const SidebarModalContext = createContext();
-/* --- We have access to Provider now --- */
+
+/* --- Custom Hook : To avoid importing useContext and SidebarModalContext in my children components --- */
+
+export const useCustomContext = () => {
+  return useContext(SidebarModalContext);
+};
 
 export default function ContextComponent({ children }) {
   const [iconClick, setIconClick] = useState(false);

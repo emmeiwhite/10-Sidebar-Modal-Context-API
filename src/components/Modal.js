@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FaTimes } from "react-icons/fa";
-import { SidebarModalContext } from "./../context";
+import { useCustomContext } from "./../context";
 
 const Modal = ({ isModalBtnClicked }) => {
-  const { handleModalBtnClick } = useContext(SidebarModalContext);
+  const { handleModalBtnClick } = useCustomContext();
   return (
     <main>
       <div

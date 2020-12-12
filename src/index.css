@@ -199,8 +199,18 @@ Home
   height: 300px;
   width: 300px;
   background: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .modal-overlay.modal-open {
   transition: all 0.5s ease-in-out;
   display: flex;
+}
+
+.modal-content button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }

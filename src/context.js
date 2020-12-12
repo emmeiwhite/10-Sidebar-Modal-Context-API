@@ -12,9 +12,16 @@ export default function ContextComponent({ children }) {
   const [iconClick, setIconClick] = useState(false);
   const [modalBtnClick, setModalBtnClick] = useState(false);
 
-  const handleModalBtnClick = () => {
-    setModalBtnClick(true);
+  const handleModalBtnClick = (modalState) => {
     console.log("Modal Button Clicked !!!");
+    switch (modalState) {
+      case "open":
+        setModalBtnClick(true);
+        break;
+      case "close":
+        setModalBtnClick(false);
+        break;
+    }
   };
 
   const handleIconClick = () => {

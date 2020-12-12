@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaTimes } from "react-icons/fa";
+import { SidebarModalContext } from "./../context";
+
 const Modal = ({ isModalBtnClicked }) => {
+  const { handleModalBtnClick } = useContext(SidebarModalContext);
   return (
     <main>
       <div
@@ -8,7 +11,12 @@ const Modal = ({ isModalBtnClicked }) => {
           isModalBtnClicked ? "modal-open" : "modal-close"
         }`}
       >
-        <div className="modal-content">Main Content</div>
+        <div className="modal-content">
+          <p>Here goes the modal content</p>
+          <button onClick={() => handleModalBtnClick("close")}>
+            <FaTimes />
+          </button>
+        </div>
       </div>
     </main>
   );

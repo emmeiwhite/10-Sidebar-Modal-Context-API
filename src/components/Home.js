@@ -20,7 +20,10 @@ const Home = () => {
       <FaBars className="fa-bars" onClick={handleIconClick} />
       <Sidebar isIconClicked={iconClick} />
       <Modal isModalBtnClicked={modalBtnClick} />
-      <button className={`modal-btn`} onClick={handleModalBtnClick}>
+      <button
+        className={`modal-btn`}
+        onClick={() => handleModalBtnClick("open")}
+      >
         Show Modal
       </button>
     </section>

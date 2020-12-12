@@ -2,8 +2,7 @@ import React, { useState, createContext, useContext } from "react";
 
 export const SidebarModalContext = createContext();
 
-/* --- Custom Hook : To avoid importing useContext and SidebarModalContext in my children components --- */
-
+/* --- Custom Hook  --- */
 export const useCustomContext = () => {
   return useContext(SidebarModalContext);
 };
@@ -12,25 +11,18 @@ export default function ContextComponent({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setisModalOpen] = useState(false);
 
-  const handleIsModalOpen = (modalState) => {
-    console.log("Modal Button Clicked !!!");
-    switch (modalState) {
-      case "open":
+  const handleComponentToggle = (state) => {
+    switch (state) {
+      case "modal-open":
         setisModalOpen(true);
         break;
-      case "close":
+      case "modal-close":
         setisModalOpen(false);
         break;
-    }
-  };
-
-  const handleIsSidebarOpen = (iconState) => {
-    console.log("Icon clicked");
-    switch (iconState) {
-      case "open":
+      case "sidebar-open":
         setIsSidebarOpen(true);
         break;
-      case "close":
+      case "sidebar-close":
         setIsSidebarOpen(false);
         break;
     }
@@ -40,9 +32,8 @@ export default function ContextComponent({ children }) {
     <SidebarModalContext.Provider
       value={{
         isModalOpen,
-        handleIsModalOpen,
+        handleComponentToggle,
         isSidebarOpen,
-        handleIsSidebarOpen,
       }}
     >
       {children}

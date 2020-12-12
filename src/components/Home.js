@@ -7,17 +7,22 @@ import { useCustomContext } from "./../context";
 const Home = () => {
   const {
     isSidebarOpen,
-    handleIsSidebarOpen,
+    handleComponentToggle,
     isModalOpen,
-    handleIsModalOpen,
   } = useCustomContext();
 
   return (
     <section className="home-container">
-      <FaBars className="fa-bars" onClick={() => handleIsSidebarOpen("open")} />
+      <FaBars
+        className="fa-bars"
+        onClick={() => handleComponentToggle("sidebar-open")}
+      />
       <Sidebar isIconClicked={isSidebarOpen} />
       <Modal isisModalOpened={isModalOpen} />
-      <button className={`modal-btn`} onClick={() => handleIsModalOpen("open")}>
+      <button
+        className={`modal-btn`}
+        onClick={() => handleComponentToggle("modal-open")}
+      >
         Show Modal
       </button>
     </section>

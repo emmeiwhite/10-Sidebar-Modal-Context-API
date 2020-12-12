@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { useCustomContext } from "./../context";
 
 const Modal = ({ isisModalOpened }) => {
-  const { handleIsModalOpen } = useCustomContext();
+  const { handleComponentToggle } = useCustomContext();
   return (
     <main>
       <div
@@ -16,7 +16,7 @@ const Modal = ({ isisModalOpened }) => {
 
           <FaTimes
             className="modal-close-icon"
-            onClick={() => handleIsModalOpen("close")}
+            onClick={() => handleComponentToggle("modal-close")}
           />
         </div>
       </div>

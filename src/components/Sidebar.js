@@ -21,9 +21,9 @@ const Sidebar = ({ isIconClicked }) => {
           {links.map((link) => {
             const { id, url, text, icon } = link;
             return (
-              <li className="link">
+              <li key={id}>
                 <span>{icon}</span>
-                <a href="#">{text}</a>
+                <span>{text}</span>
               </li>
             );
           })}
@@ -34,7 +34,7 @@ const Sidebar = ({ isIconClicked }) => {
         {social.map((socialIcon) => {
           const { icon, id, url } = socialIcon;
           return (
-            <a href={url} key={id}>
+            <a href={url} key={id} target="_blank">
               {icon}
             </a>
           );

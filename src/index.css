@@ -197,10 +197,31 @@ Home
   cursor: pointer;
 }
 
+.sidebar-links {
+  font-size: 1.2rem;
+  color: #777;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.sidebar-links li {
+  margin: 0.5rem 0;
+  text-transform: capitalize;
+}
+.sidebar-links li span:first-child {
+  margin-right: 1rem;
+}
 .sidebar nav {
   flex: 1;
 }
 
+.sidebar footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sidebar footer a {
+  color: rgb(0, 183, 255);
+}
 /* --- Modal --- */
 .modal-overlay {
   position: fixed;
